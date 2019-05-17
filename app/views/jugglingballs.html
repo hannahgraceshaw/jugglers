@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/start">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">How many balls do you juggle with?</h1>
+
+      <form class="form" action="/jugglingballs-answer" method="post">
+
+        <p><div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="jugglingballs-1" name="jugglingballs" type="radio" value="One or two" {{checked('jugglingballs','One or two')}}>
+        <label class="govuk-label govuk-radios__label" for="jugglingballs-1">
+          One or two
+        </label> </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="jugglingballs-2" name="jugglingballs" type="radio" value="Three" {{checked('jugglingballs','Three')}}>
+        <label class="govuk-label govuk-radios__label" for="jugglingballs-2">
+          Three
+        </label> </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="jugglingballs-3" name="jugglingballs" type="radio" value="Four or more" {{checked('jugglingballs','Four or more')}}>
+        <label class="govuk-label govuk-radios__label" for="jugglingballs-3">
+          Four or more
+        </label> </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="jugglingballs-4" name="jugglingballs" type="radio" value="None. I can't juggle." {{checked('jugglingballs',"None. I can't juggle")}}>
+        <label class="govuk-label govuk-radios__label" for="jugglingballs-4">
+          None. I can't juggle.
+        </label> </div>
+    </div>
+  </fieldset>
+</div></p>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
